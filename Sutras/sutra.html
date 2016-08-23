@@ -19,17 +19,17 @@
             <div ui-if="activeTab == 1">
                 <!--<h3 class="page-header">Gujrati</h3>-->
                 <h3 class="page-header"></h3>
-                <p>{{content_gujrati}}</p>
+                <p ng-bind-html="content_gujrati"></p>
             </div>
             <div ui-if="activeTab == 2">
                 <!--<h3 class="page-header">Hindi</h3>-->
                 <h3 class="page-header"></h3>
-                <p>{{content_hindi}}</p>
+                <p ng-bind-html="content_hindi"></p>
             </div>
             <div ui-if="activeTab == 3">
                 <!--<h3 class="page-header">English</h3>-->
                 <h3 class="page-header"></h3>
-                <p>{{content_english}}</p>
+                <p ng-bind-html="content_english"></p>
             </div>
             <div class="btn-group justified nav-tabs">
                 <a ui-set="{'activeTab': 1}"
