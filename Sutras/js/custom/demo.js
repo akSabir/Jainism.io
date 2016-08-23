@@ -241,7 +241,7 @@ app.directive('dragMe', ['$drag', function ($drag) {
 
 // For this trivial demo we have just a unique MainController 
 // for everything
-app.controller('MainController', function ($rootScope, $scope,$http) {
+app.controller('MainController', function ($rootScope, $scope,$http,$sanitize) {
 
     $scope.swiped = function (direction) {
         alert('Swiped ' + direction);
@@ -351,8 +351,8 @@ app.controller('MainController', function ($rootScope, $scope,$http) {
 				oSutra.title_hindi = response.sutras.sutra[i].title_hindi;
 				oSutra.title_english = response.sutras.sutra[i].title_english;
 				oSutra.content_gujrati = response.sutras.sutra[i].content_gujrati;
-				oSutra.content_hindi = response.sutras.sutra[i].content_hindi;
-				oSutra.content_english = response.sutras.sutra[i].content_english;
+				oSutra.content_hindi = $sanitize(response.sutras.sutra[i].content_hindi);
+				oSutra.content_english =$sanitize(response.sutras.sutra[i].content_english);
 
 				$scope.sutras[i] = oSutra;
 			}
