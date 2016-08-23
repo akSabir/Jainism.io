@@ -39,8 +39,6 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/sutra/:id', { templateUrl: 'sutra.html', controller: 'ShowSutraController', reloadOnSearch: false });
 });
 
-app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
-
 // `$touch example`
 app.directive('toucharea', ['$touch', function ($touch) {
     // Runs during compile
@@ -243,7 +241,7 @@ app.directive('dragMe', ['$drag', function ($drag) {
 
 // For this trivial demo we have just a unique MainController 
 // for everything
-app.controller('MainController', function ($rootScope, $scope,$http) {
+app.controller('MainController', function ($rootScope, $scope, $http) {
 
     $scope.swiped = function (direction) {
         alert('Swiped ' + direction);
