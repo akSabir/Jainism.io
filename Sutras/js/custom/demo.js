@@ -39,6 +39,8 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/sutra/:id', { templateUrl: 'sutra.html', controller: 'ShowSutraController', reloadOnSearch: false });
 });
 
+app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
+
 // `$touch example`
 app.directive('toucharea', ['$touch', function ($touch) {
     // Runs during compile
@@ -241,7 +243,7 @@ app.directive('dragMe', ['$drag', function ($drag) {
 
 // For this trivial demo we have just a unique MainController 
 // for everything
-app.controller('MainController', function ($rootScope, $scope,$http,$sce) {
+app.controller('MainController', function ($rootScope, $scope,$http) {
 
     $scope.swiped = function (direction) {
         alert('Swiped ' + direction);
@@ -350,8 +352,8 @@ app.controller('MainController', function ($rootScope, $scope,$http,$sce) {
 				oSutra.title_hindi = response.sutras.sutra[i].title_hindi;
 				oSutra.title_english = response.sutras.sutra[i].title_english;
 				oSutra.content_gujrati = response.sutras.sutra[i].content_gujrati;
-				oSutra.content_hindi = $sce.trustAsHtml(response.sutras.sutra[i].content_hindi);
-				oSutra.content_english =$sce.trustAsHtml(response.sutras.sutra[i].content_english);
+				oSutra.content_hindi = response.sutras.sutra[i].content_hindi;
+				oSutra.content_english = response.sutras.sutra[i].content_english;
 
 				$scope.sutras[i] = oSutra;
 			}
