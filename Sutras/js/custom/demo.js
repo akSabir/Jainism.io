@@ -331,7 +331,6 @@ app.controller('MainController', function ($rootScope, $scope,$http,$sce) {
 	//get all sutra from xml and convert into json object then using for loop initialize array.
 
 	$scope.sutras = {};
-	debugger;
 	$http.get("xml/sutra.xml",
 		{
 			transformResponse: function (cnv) {
