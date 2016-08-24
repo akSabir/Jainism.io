@@ -1,44 +1,47 @@
-<div ui-content-for="title">
-    <span>{{content_id}}</span>
+<div data-ui-content-for="title">
+	<span>{{content_id}}</span>
 </div>
 <div class="scrollable">
-    <div class="scrollable-content">
-        <div class='section'>
-            <ui-state id='activeTab' default='1'></ui-state>
-            <ul class="nav nav-tabs">
-                <li ui-class="{'active': activeTab == 1}">
-                    <a ui-set="{'activeTab': 1}">Gujrati</a>
-                </li>
-                <li ui-class="{'active': activeTab == 2}">
-                    <a ui-set="{'activeTab': 2}">Hindi</a>
-                </li>
-                <li ui-class="{'active': activeTab == 3}">
-                    <a ui-set="{'activeTab': 3}">English</a>
-                </li>
-            </ul>
-            <div ui-if="activeTab == 1">
-                <!--<h3 class="page-header">Gujrati</h3>-->
-                <h3 class="page-header"></h3>
-                <p ng-bind-html="content_gujrati"></p>
-            </div>
-            <div ui-if="activeTab == 2">
-                <!--<h3 class="page-header">Hindi</h3>-->
-                <h3 class="page-header"></h3>
-                <p ng-bind-html="content_hindi"></p>
-            </div>
-            <div ui-if="activeTab == 3">
-                <!--<h3 class="page-header">English</h3>-->
-                <h3 class="page-header"></h3>
-                <p ng-bind-html="content_english"></p>
-            </div>
-            <div class="btn-group justified nav-tabs">
-                <a ui-set="{'activeTab': 1}"
-                   ui-class="{'active': activeTab == 1}" class="btn btn-default">{{title_gujrati}}</a>
-                <a ui-set="{'activeTab': 2}"
-                   ui-class="{'active': activeTab == 2}" class="btn btn-default">{{title_hindi}}</a>
-                <a ui-set="{'activeTab': 3}"
-                   ui-class="{'active': activeTab == 3}" class="btn btn-default">{{title_english}}</a>
-            </div>
-        </div>
-    </div>
+	<div class="scrollable-content">
+		<div class='section'>
+			<ui-state id='activeTab' default='1'></ui-state>
+			<ul class="nav nav-tabs">
+				<li data-ui-class="{'active': activeTab == 1}">
+					<a data-ui-set="{'activeTab': 1}">Gujrati</a>
+				</li>
+				<li data-ui-class="{'active': activeTab == 2}">
+					<a data-ui-set="{'activeTab': 2}">Hindi</a>
+				</li>
+				<li data-ui-class="{'active': activeTab == 3}">
+					<a data-ui-set="{'activeTab': 3}">English</a>
+				</li>
+			</ul>
+			<div data-ui-if="activeTab == 1">
+				<!--<h3 class="page-header">Gujrati</h3>-->
+				<h3 class="page-header"></h3>
+				<!--<p data-ng-bind-html="content_gujrati"></p>-->
+				<p style="white-space: pre;" data-ng-bind-html="content_gujrati"></p>
+			</div>
+			<div data-ui-if="activeTab == 2">
+				<!--<h3 class="page-header">Hindi</h3>-->
+				<h3 class="page-header"></h3>
+				<!--<p data-ng-bind-html="content_hindi"></p>-->
+				<p style="white-space: pre;" data-ng-bind-html="content_hindi"></p>
+			</div>
+			<div data-ui-if="activeTab == 3">
+				<!--<h3 class="page-header">English</h3>-->
+				<h3 class="page-header"></h3>
+				<!--<p data-ng-bind-html="content_english"></p>-->
+				<p style="white-space: pre;" data-ng-bind-html="content_english"></p>
+			</div>
+			<div class="btn-group justified nav-tabs">
+				<a data-ui-set="{'activeTab': 1}"
+					data-ui-class="{'active': activeTab == 1}" class="btn btn-default">{{title_gujrati}}</a>
+				<a data-ui-set="{'activeTab': 2}"
+					data-ui-class="{'active': activeTab == 2}" class="btn btn-default">{{title_hindi}}</a>
+				<a data-ui-set="{'activeTab': 3}"
+					data-ui-class="{'active': activeTab == 3}" class="btn btn-default">{{title_english}}</a>
+			</div>
+		</div>
+	</div>
 </div>
